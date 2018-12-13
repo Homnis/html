@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jQuery version/jquery-2.1.4.js" type="text/javascript"></script>
+		<script type="text/javascript" src="jQuery version/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+		<style type="text/css">
+			#div1{
+				text-align: center;
+				width: 1920px;
+				position: fixed;
+				top: 0;
+				margin: 0;
+				background-image: url(tree/images/i_ongbg2.jpg);
+			}
+			#div1 div{
+				display: inline-block;
+				padding:0;
+				margin:0;
+			}
+			#div1-2 ul{
+				list-style:none;
+				margin: 0px /* 与外界元素的距离为0 */
+    			padding: 0px /* 与内部元素的距离为0 */
+    			width: auto /* 宽度根据元素内容调整 */
+			}
+			#div1-2 ul li{
+				display: inline-block;
+				font-family: "微软雅黑";
+				font-size: 14px;
+				width: 100px;
+				position: relative;
+				float:left;
+				/*height: 50px;*/
+				line-height: 65px;
+			}
+			a{
+				text-decoration: none;
+				color: black;
+				font-weight: 200;
+			}
+			#div2{
+				height: 290px;
+				margin-top: 120px;
+				/*z-index: 50;*/
+			}
+			#div3-1{
+				display: inline-block;
+				float: right;
+			}
+			#div3-1 a:link{
+				color: black;
+			}
+			#div3-1 a:hover{
+				color: #0D6F67;
+			}
+			#div6 ul li{
+				display: inline-block;
+				margin: 60px;
+				text-align: center;
+			}
+			#div6 ul li a:link{
+				opacity: 0.5;
+			}
+			#div6 ul li a:hover{
+				opacity: 1;
+			}
+			#div7 ul li a:link{
+				color: white;
+			}
+			#div7 ul li a:hover{
+				color: #A9A9A9;
+			}
+			#div7 ul li{
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<!--标题栏-->
+			<!--左侧图像-->
+			<div id="div1-1">
+				<a href="#"><img src="tree/upload/picture/logo.png"/></a>
+			</div>
+			<!--右侧列表-->
+			<div id="div1-2">
+				<ul>
+					<li class="titleList">
+						<h3><a href="#" title="首页" >首页</a></h3>
+					</li>
+					<li class="titleList_on">
+						<h3><a href="#" title="关于我们">关于我们</a></h3>
+					</li>
+					<li class="titleList">
+						<h3><a href="#" title="公司动态">公司动态</a></h3>
+					</li>
+					<li class="titleList">
+						<h3><a href="#" title="产品展示">产品展示</a></h3>
+					</li>
+					<li class="titleList">
+						<h3><a href="#" title="工程案例">工程案例</a></h3>
+					</li>
+					<li class="titleList">
+						<h3><a href="#" title="联系我们">联系我们</a></h3>
+					</li>
+				</ul>
+			</div>
+			<script type="text/javascript">
+				var li = $('#div1-2 ul li');
+				li.eq(0).hover(function(e){
+					$(this).find("a").html("Home")
+					$(this).css("background-image","url(tree/images/nav_bg.png)")
+				},function(){
+					$(this).find('a').html("首页");
+					$(this).css("background-image","")
+				})
+				li.eq(1).hover(function(e){
+					$(this).find("a").html("About us")
+					$(this).css("background-image","url(tree/images/nav_bg.png)")
+				},function(){
+					$(this).find('a').html("关于我们");
+					$(this).css("background-image","")
+				})
+				li.eq(2).hover(function(e){
+					$(this).find("a").html("News")
+					$(this).css("background-image","url(tree/images/nav_bg.png)")
+				},function(){
+					$(this).find('a').html("公司动态");
+					$(this).css("background-image","")
+				})
+				li.eq(3).hover(function(e){
+					$(this).find("a").html("Product")
+					$(this).css("background-image","url(tree/images/nav_bg.png)")
+				},function(){
+					$(this).find('a').html("产品展示");
+					$(this).css("background-image","")
+				})
+				li.eq(4).hover(function(e){
+					$(this).find("a").html("Case")
+					$(this).css("background-image","url(tree/images/nav_bg.png)")
+				},function(){
+					$(this).find('a').html("工程案例");
+					$(this).css("background-image","")
+				})
+				li.eq(5).hover(function(e){
+					$(this).find("a").html("Contact")
+					$(this).css("background-image","url(tree/images/nav_bg.png)")
+				},function(){
+					$(this).find('a').html("联系我们");
+					$(this).css("background-image","")
+				})
+			</script>
+		</div>
+		<div id="div2" style="background-image: url(tree/images/about.jpg);" >
+			<!--图片-->
+			<br />
+		</div>
+		<div id="div3"  style="width: 1400px;text-indent: 300px;margin-left: 230px;">
+			<!--关于我们-->
+			<h2 style="font-weight: 400; white-space: nowrap;">关于我们</h2>
+			<div id="div3-1" style="margin-top: -40px;margin-right: 280px;">
+				<span>当前位置：</span>
+				<a href="#" id="now">首页 ></a>
+				<span style="color: #01CD78;">关于我们</span>
+			</div>
+			<hr />
+			
+		</div>
+		<div id="div4">
+			<!--公司简介-->
+			<div id="div4-1" style="text-align: center;font-size: 28px;">
+				<span style="color: #97CCC3;font-weight: bolder;">COMPANY PROFILE</span>
+				<h2 style="margin-top: -8px;font-weight: 400;">公司<span style="color: #5F9EA0;">简介</span></h2>
+			</div>
+			<div id="div4-2" style="margin-left: 390px;">
+				<p style="width: 1200px;font-size: 17.5px;">某某國際貿易有限公司總部位於香港，在中國內地多個地方設有分場。是一家擁有豐富花卉苗木採購，種植及進出口貿易經驗的專業公司
+					，同時集庭院綠化設計、施工、花卉苗木、種植養護全方位的景觀生態運營商。雲集行業優質資源，擁有頂尖的服務團隊，業務遍佈全球，包
+					括北美洲：美國，拉丁美洲：墨西哥、哥斯大黎加、瓜地馬拉。南美洲：巴西、智利、烏拉圭、阿根廷。大洋洲：瓦努阿圖、澳大利亞、新西蘭。歐洲：
+					西班牙、義大利、德國、比利時。非洲：南非、安哥拉、埃及。亞洲：泰國、馬來西亞、中國臺灣、越南、柬埔寨、緬甸、印度、日本、韓國、印尼、菲律賓
+					。並進一步積極拓展中國大陸及香港業務。 </p>
+				<br />
+				<br />
+				<p style="width: 1200px;font-size: 17.5px;">公司總部位於中國香港，進一步開拓中國苗木景觀市場。在中國廣東省、浙江省和廣西南寧、江蘇蘇州等地設有多個苗木生產基地，
+					輻射南北，能為工程、居家、景觀園林建設提供大量優質的園林花卉苗木資源。 </p>
+			</div>
+			<br />
+			<br />
+			<img src="tree/upload/picture/about2.jpg" style="width: 1200px;margin-left: 390px;"/>
+		</div>
+		<div id="div5">
+			<!--我们的服务-->
+			<br />
+			<br />
+			<br />
+			<div id="div5-1" style="text-align: center;font-size: 28px;">
+				<span style="color: #97CCC3;font-weight: bolder;">SERVICE</span>
+				<h2 style="margin-top: -8px;font-weight: 400;">我们的<span style="color: #5F9EA0;">服务</span></h2>
+			</div>
+			<div id="div5-2" style="margin-left: 390px;">
+				<p style="width: 1200px;font-size: 17.5px;">擁有豐富的花卉、種子、盆栽、苗木資源及國際貿易經驗。能為您提供選購，種植，通關一體化的供應鏈式服務。
+					您可以時刻關注我們的網頁更新，捕捉最新、最優質的花卉，苗木資源. </p>
+				<br />
+				<p style="width: 1200px;font-size: 17.5px;">豐富的施工及養護經驗和一流的園林綠化設計、施工技術，永決您的後顧之憂。
+					施工骨幹技術工人均經過專業培訓，並有多年的施工養護經驗，保證工程施工品質及後期養護規範化、專業化。 </p>
+				<br />
+				<p style="width: 1200px;font-size: 17.5px;">我們歡迎您到我們浙江及廣東、廣西、江蘇各種植基地，實地選苗，我們將為您提供最專業的景觀建設意見，保證您挑選到最合心意的“綠意”產品。  </p>
+			</div>
+		</div>
+		<div id="div6">
+			<!--三个图片-->
+			<ul style="list-style:none;margin-left: 380px;">
+				<li><a href="#"><img src="tree/images/i_pic1_sel.png" id="img1"/><br /><label for="#img1" style="font-weight: 500;">花卉与盆栽</label></a></li>
+				<img src="tree/images/line2.jpg"/>
+				<li><a href="#"><img src="tree/images/i_pic2_sel.png" id="img2"/><br /><label for="#img2" style="font-weight: 500;">景观苗木与观赏锦鲤</label></a></li>
+				<img src="tree/images/line2.jpg"/>
+				<li><a href="#"><img src="tree/images/i_pic3_sel.png" id="img3"/><br /><label for="#img3" style="font-weight: 500;">庭院设计与园艺产品</label></a></li>
+				<img src="tree/images/line2.jpg"/>
+			</ul>
+			<script type="text/javascript">
+				var imgList=$("#div6 ul li")
+				imgList.eq(0).hover(function(){
+					$(this).find("label").css("color","#307B74")
+				})
+				
+				imgList.eq(1).hover(function(){
+					$(this).find("label").css("color","#307B74")
+				})
+				
+				imgList.eq(2).hover(function(){
+					$(this).find("label").css("color","#307B74")
+				})
+				
+			</script>
+		</div>
+		<div id="div7" style="background-color: #307B74;">
+			<!--底部-->
+			<span style="margin-left: 100px;">
+				ADD：KAM TIN NT HONKONG 客服電話：0760-23864215/13249692869 
+			</span>
+			<a href="#" style="margin-left: 800px;"><img src="tree/images/top.png"  /></a>
+			<ul style="list-style:none;margin-top: -2px;margin-left: 60px;">
+				<li><a href="#">關于我們 </a></li>
+				|
+				<li><a href="#">公司動态 </a></li>
+				|
+				<li><a href="#">産品展示 </a></li>
+				|
+				<li><a href="#">工程案例 </a></li>
+				|
+				<li><a href="#">視頻中心 </a></li>
+				|
+				<li><a href="#">聯系我們 </a></li>
+			</ul>
+		</div>
+		<div id="div8" style="background-color: #97CCC3;margin-top: -16px;">
+			<!--版权-->
+			<span style="margin-left: 160px;font-size: 10px;">
+				Copyright © 某某國際貿易有限公司 All Rights Reserved 
+			</span>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			/* *选择器：选择所有标签*/
+			/*此处设定背景颜色为浅蓝色*/
+			*{
+				background-color: lightblue;
+			}
+			/*标签选择器：选择指定标签*/
+			/*此处设定百度超链接的背景色为深灰色*/
+			a{
+				background-color: darkgray;
+			}
+			/*ID选择器：选择器*/
+			/*此处设定id为Hbuilder的图片边框样式*/
+			#Hbuilder {
+				border: 10px solid #5F9EA0;
+			}
+			/*类选择器：选择拥有该类名的元素*/
+			/*此处设置label1的样式*/
+			.label1{
+				color: blueviolet;
+				font-size: 20px;
+				text-decoration: line-through;
+			}
+			/*空格选择器：子孙界别元素*/
+			/*定义第一个abc/def的有序列表为红色*/
+			ul li ol li{
+				color: #FF0000;
+			}
+			/*>选择器：选择子级别标签*/
+			/*定义abc/def的无序列表为深红色*/
+			ul>li>ul>li{
+				color: darkred;
+			}
+			/*，：满足其中一个即可*/
+			/*此处设置p1为楷体*/
+			.p1,#p1{
+				font-family: "楷体";
+			}
+			/*+：相邻的下一个*/
+			/*此处设置p2字体大小*/
+			#p1+#p2{
+				font-size: 25px;
+			}
+			/*~：选择下面的兄弟标签*/
+			/*设置p1后面段落的颜色*/
+			#p1~p{
+				color: #8A2BE2;
+			}
+			/*[属性名]拥有属性的所有标签*/
+			/*[属性名=“”] 有用属性并且属性值=“”*/
+			/*设置语言类型为中文的span的字体颜色*/
+			[lang="zh"]{
+				color: #0000FF;
+			}
+			/*[属性名^=“”]以“”开头
+			[属性名$=""]以“”结尾*/
+			[id^="sp"]{
+				font-size: 30px;
+			}
+			[lang$="h"]{
+				font-family: "黑体";
+				font-weight: bolder;	
+			}
+			/*[属性名~=“”]满足一个类名即可
+			[属性名*=“”]属性包含“”*/
+			[lang~="zh"]{
+				font-style: italic;
+				text-decoration: underline;
+			}
+			input[type*="te"]{
+				background-color: #F0FFFF;
+			}
+			/*伪类选择器
+			link
+			visited
+			hover
+			active*/
+			a:link{
+				color: #006400;
+			}
+			a:visited{
+				color: #CCCCCC;
+			}
+			a:hover{
+				color: red;
+			}
+			a:active{
+				color: blue;
+			}
+			/*enable disable checked*/
+			/*当姓名栏允许输入时加个边框
+			  当密码不允许输入时加个大边框
+			  选中性别变宽*/
+			input[type="text"]:enabled{
+				border:2px solid #FF0000;
+			}
+			input[type="password"]:disabled{
+				border:100px solid #FF0000;
+			}
+			input[type="radio"]:checked{
+				width: 150px;
+			}
+				/*not()*/
+				/*对不是text类型的输入加个边框*/
+			input:not([type="text"]){
+				border: 1px solid blue;
+			}
+			/*颜色三种写法 ：rgb,预先设定的固定单词，十六进制的rgb*/
+			/*字体样式*/ 
+	/*字体类型、字体大小、字体加粗、斜体、下划线、中划线、等*/
+			/*上面都用过了*/
+			/*段落加个缩进*/
+			p{
+				text-indent: 2em;
+			}
+			/*弹性盒尺寸计算*/
+			/*absolute与fix的区别是absolute可以被滚轮拉走，fix固定在窗口中，应该是双方的参考系不同*/
+			#Hbuilder{
+				position: absolute;
+				left: 500px;
+				top: 20px;
+				padding: 15px;
+				border: 20px solid bisque;
+				margin: 20px;
+				/*opacity: 0.5;*/
+			}
+			/*display显示方式
+			block inline  inline-block none*/
+			/*一个span用block 块显示，F12可以明显看出他选取的目标是窗口的一整行*/
+			/*一个p段落用inline-block或inline显示，并到一行*/
+			/*none是不显示*/
+			#span1{
+				display: block;
+			}
+			#p1{
+				display: inline-block;
+			}
+			#p2{
+				display: inline;
+			}
+			/*#p3{
+				display: none;
+			}*/
+		</style>
+		<title></title>
+	</head>
+	<body > 
+		<a href="http://www.baidu.com" target="_blank">百度</a>
+		<form>
+			姓名：<input type="text" placeholder="请输入姓名">
+    		<br/>
+   			<br/>
+			密码：<input type="password" placeholder="请输入密码">
+			<br />
+			性别:<input type="radio" name="sex"/>男 <input type="radio" name="sex"/>女
+		</form>
+		<img src="know/img/HBuilder.png" id="Hbuilder"/>
+		<label for="Hbuilder" class="label1">label</label>
+		<br />
+		<div id="div1">
+			<ul>
+				<li>
+					<ol>
+						<li>abc</li>
+						<li>def</li>
+					</ol>
+				</li>
+				<li>
+					<ul>
+						<li>abc</li>
+						<li>def</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="div2">
+			<p class="p1" id="p1">这是一段话</p>
+			<p class="p2" id="p2">这是一段话</p>
+			<p class="p3" id="p3">这是一段话</p>
+		</div>
+		<div id="div3">
+			<span id="span1" lang="zh">
+				你的恶名从爱尔兰到契丹无人不知无人不晓
+			</span>
+			<br />
+			<br />
+			<br />
+			<span id="span2" lang="zh">
+				西班牙不是皇帝
+			</span>
+		</div>
+	</body>
+</html>

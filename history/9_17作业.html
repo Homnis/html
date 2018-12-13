@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--初始化jQuery-->
+		<script type="text/javascript">
+			window.jQuery||document.write('<script src="jQuery version/jquery-2.1.4.js"><\/script>') 
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<table border="" cellspacing="" cellpadding="">
+				<tr id="header_box1" class="header_class">
+					<th>Header</th>
+					<th>Header</th>
+					<th>Header</th>
+				</tr>
+				<tr id="data_box1" class="data_class1">
+					<td>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+				</tr>
+				<tr id="data_box2" class="data_class2">
+					<td>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+				</tr>
+			</table>
+			<p id="p1" name="p1">1</p>
+			<p id="p2">2</p>
+			<span id="span1">
+				This is span1
+			</span>
+			<br />
+			<span id="span2">
+				This is span2
+			</span>
+			<div id="div1-1">
+				<span id="span3">
+					This is span3
+				</span>
+			</div>
+		</div>
+		<div id="div2">
+			<a href="http://www.google.com.hk">一个不存在的网站</a>
+			<form action="star_in_div.html" method="get" id="form1">
+				<input type="radio" name="radio1" id="radio1" value="radio1"/><label for="radio1">to be</label>
+				<input type="radio" name="radio1" id="radio1" value="radio1"/><label for="radio1">not to be</label>
+				<input type="text" name="text1" id="text1" value="input text" />
+				<p>分段</p>
+				<input type="checkbox" name="check" id="check1" value="first" /><label for="check1">first</label>
+				<input type="checkbox" name="check" id="check2" value="first" /><label for="check2">second</label>
+				<input type="submit" value="kill enrique"/>
+			</form>
+		</div>
+		<!--jQuery选择器-->
+		<!--基本选择器-->
+		<script type="text/javascript">
+			$(function(){
+				console.log(" 标签加载完毕");
+			})
+			//id选择器
+			$("#header_box1").css("color","red")
+//			类选择器
+			$(".data_class1").css("color","#003EFF")
+//			元素名选择器
+			$("p").css("background-color","#ADD8E6")
+//			选择所有元素
+			$("*").css("font-style","italic")
+//			分组匹配元素
+			$("p,#span1").css("color","red")
+		</script>
+		<!--层次选择器-->
+		<script type="text/javascript">
+			//选择div1下面的所有span,包括内层div中的span
+			$("#div1 span").css("font-weight","bold")
+			//选择div下面的span，不包括内层的span3
+			$("#div1>span").css("background-color","aquamarine")
+			//选择div1后紧邻的div2
+			$("#div1+div").css("background-color","azure")
+			//选择p1后面所有的span
+			$("#p1~span").css("font-size","24px")
+		</script>
+		<!--属性选择器-->
+		<script type="text/javascript">
+			//选择拥有class类型的元素，即table中的三项
+			$("[class]").css("background-color","#EFFDFD")
+			//选择具有name属性的p
+			$("p[name]").css("text-decoration","line-through")
+			//选择type为radio的元素
+			$("[type=text]").css("background-color","#DBFFFF")
+//			选择id属性值为span3的span元素
+			$("span[id=span3]").css("font-family","楷体")
+//			选择所有id不是p1的元素
+//			$("[id!=p1]").css("font-size","20px")
+//			选择type以text开始的元素
+			$("[type^=text]").css("color","red")
+//			选择拥有id属性,并且id属性以1结束的所有span元素
+			$("span[id][id$=1]").css("text-decoration","underline")
+		</script>
+		<!--伪类选择器-->
+		<script type="text/javascript">
+//			选取id为form1的表单内的所有可用元素
+			$("#form1 :enabled").css("font-weight","bold")
+//			选择所有被check的元素
+			$("input:checked")
+			
+		</script>
+		<!--jQuery筛选-->
+		<script type="text/javascript">
+			//把p2的内容改为22222222
+			$("p").eq(1).text("2222222222")
+			//把p1的内容改为11111
+			$("p").first().text("11111")
+//			把span3的内容改为This is no longer span3
+			$("span").last().text("This is no longer span3")
+//				find
+			$("#div1").find("#data_box2").css("color","blue")
+//			把div1中的所有子类加边框
+			$("#div1").children().css("border","2px solid red")
+//			父类
+//			$("#div1-1").parent()
+////			多级父类
+//			$("#span3").parents()
+////			取父类直到x
+//			$("#span3").parentsUntil("#div1")
+////			下一个
+//			$("#p1").next()
+////			下面全部
+//			$("#p1").nextAll()
+////			取下面元素直到
+//			$("#p1").nextUntil("#p2")
+//			//prev的都和上面的类似
+//			// 取p1同级
+//			$("#p1").siblings()
+////			筛选出与指定表达式(不)匹配的元素集合
+//			$("p").filter("#p1")
+//			$("p").not("#p1")
+		</script>
+		<!--文档操作-->
+		<script type="text/javascript">
+			//获取内容
+//			$("p").text()
+			//html val类似
+//			获取属性
+			alert($("#p1").attr("id"))
+			//添加或移除类，有即删，无即添
+			$("#p1").toggleClass("selected")
+			//添加内容
+			$("#p1").append("<b>Hello</b>")
+			//把前面内容移动到后面
+			$("#p1").appendTo("#div1-1")
+			//在前面添加
+			$("#p1").prepend("<b>前面</b>")
+			//把span2加到span1后面
+			$("#span1").prependTo("#span2")
+			//替换
+			$("#p2").replaceWith("<b>这是原来的p2</b>")
+			//replaceAll反过来
+		</script>
+		<!--事件-->
+		<script type="text/javascript">
+			//			检查div1-1中是否有div3类
+			$("#div1-1").on("click",function(e){
+				console.log($(this).hasClass("div3"))
+			})
+			$("#div1-1").off("click")
+			//one只进行一次，不用off
+//			阻止继续向父级执行
+			$("div").on("click",function(e){
+				console.log($(this))
+				event.stopPropagation()
+			})
+			
+		</script>
+
+	</body>
+</html>

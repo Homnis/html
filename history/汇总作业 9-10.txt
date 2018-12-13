@@ -1,0 +1,49 @@
+﻿*	HBuilder使用
+*	HFS使用
+		
+*	<!-- 第一批标签
+		 1,H1-H6
+		 2,B I  Strong  Em
+		 3,Samll Big
+		 4,U Del
+		 5,Sup  Sub		 
+		 
+		 -->
+		 
+*	<!-- 第二批标签
+			1，UL  OL  Li
+			2，Dl  DT  DD
+			3，P
+			4，Span
+			5，Br
+			6，Hr	
+		 -->
+		
+*	<!-- 第三批标签
+			1，a 超链接标签  target="_blank" 新页面打开  锚点跳转 id="str"  href="#str"
+			2, img  src属性 资源路径 width  heigth 
+			3， img热点  usemap=""     
+			map  area  accord  href  shape  alt
+			4， audio  video
+			src 资源路径  autoplay  controls
+			
+		 -->
+		 
+*	<!-- 第四个 Table
+		  tr 行
+		  th 表头 
+		  td 表中普通单元格
+		  border 表外边框
+		  cellspadding 单元格内部
+		  cellspacing  单元格间距
+		  
+		  
+		  -->
+		  
+作业：
+		每个标签在页面上显示
+		每个标签自己的理解（注释）
+		
+		  
+		  
+		

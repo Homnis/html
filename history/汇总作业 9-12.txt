@@ -1,0 +1,53 @@
+*	普通选择器
+	*选择器：选择所有标签
+	标签选择器：选择指定标签
+	ID选择器：选择器
+	类选择器：选择拥有该类名的元素
+*	符号选择器
+	空格选择器：子孙界别元素
+	>选择器：选择子级别标签
+	，：满足其中一个即可
+	+：相邻的下一个
+	~：选择下面的兄弟标签
+*	属性选择器
+	[属性名]拥有属性的所有标签
+	[属性名=“”] 有用属性并且属性值=“”
+	标签[属性=“”]拥有属性并且属性值=“”并且是指定标签
+	[属性名^=“”]以“”开头
+	[属性名$=""]以“”结尾
+	[属性名~=“”]满足一个类名即可
+	[属性名*=“”]属性包含“”
+*	伪类选择器
+	link
+	visited
+	hover
+	active
+	
+	enable disable checked
+	
+	first-child、last-child、nth-child(n)、nth-last-child(n)
+	fitst-of-type、last-of-type、nth-of-type(n)、nth-last-of-type(n)
+	only-child  only-of-type
+	empty 
+	
+	not()
+	
+*	颜色三种写法
+
+*	字体样式 
+	字体类型、字体大小、字体加粗、斜体、下划线、中划线、等
+
+*	弹性盒尺寸计算
+
+*   display显示方式
+	block inline  inline-block block
+
+*   简单分析下自己学校官网首页结构样式
+	
+	
+	
+	
+	
+	
+	
+	

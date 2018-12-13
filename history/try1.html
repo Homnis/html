@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    	input[type="radio"] + label::before {
+	    content: "\a0"; /*不换行空格*/
+	    display: inline-block;
+	    vertical-align: middle;
+	    font-size: 18px;
+	    width: 1em;
+	    height: 1em;
+	    margin-right: .4em;
+	    border-radius: 50%;
+	    border: 1px solid #01cd78;
+	    text-indent: .15em;
+	    line-height: 1; 
+	}
+		input[type="radio"]:checked + label::before {
+	    background-color: #01cd78;
+	    background-clip: content-box;
+	    padding: .2em;
+	}
+		label{
+			color: #0000FF;
+		}
+    </style>
+</head>
+<body>
+    <!--<h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <b><i><small>123</small></i></b>
+    <i><big>123</big></i>
+    <b><i><u>123456</u></i></b>
+    <b><i><del>123456</del></i></b> <sub>abc</sub><sup>abc</sup>
+    <ul id="ul">
+    	<li>xyz</li>
+    	<li>abc</li>
+    	<li>edf</li>
+    </ul>
+    <ol>
+    	<li>123</li>
+    	<li>456</li>
+    </ol>
+    <ol>
+    	<li>
+    		<ul>
+    			<li>uhjqet3h</li>
+    		</ul>
+    	</li>
+    	<li>
+    		<ul>
+    			<li>qweqdf</li>
+    		</ul>
+    	</li>
+    </ol>
+    <p>
+    	abcdefg<span style="color:chocolate;">hijk</span>lmn
+    </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="know/lesson1.txt" target="_blank">跳转</a>
+    <a href="http://www.baidu.com" target="_blank">跳转百度</a>
+    <a href="#ul">跳转ul</a>
+    
+	<img src="know/img/HBuilder.png"usemap="#map1" />
+	<map name="map1">
+		<area shape="circle" coords="0,0,50" href="#" alt="" title="点击跳转"/>
+	</map>
+	<table border="" bordercolor="red" cellpadding="">
+		<tr>
+			<th bgcolor="aqua">Header1</th>
+			<th>Header2</th>
+			<th>Header3</th>
+			<th>Header4</th>
+		</tr>
+		<tr>
+			<td colspan="2">Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+	</table>-->
+	<div class="female">
+    	<input type="radio" id="female" name="sex" />
+    	<label for="female">女</label>
+	</div>
+	<div class="male">                
+    	<input type="radio" id="male" name="sex" />
+    	<label for="male">男</label>
+	</div>
+</body>
+</html>

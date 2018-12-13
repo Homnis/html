@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="jQuery version/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<span id="span1">
+				没有发送请求之前
+			</span>
+			<button id="button1">改变</button>
+		</div>
+		<script type="text/javascript">
+			var xmlhttp=new XMLHttpRequest
+			console.log("声明对象："+xmlhttp.readyState)
+			//此时状态为0，未初始化
+			xmlhttp.onreadystatechange=function(){
+				console.log("预备状态发生改变："+xmlhttp.readyState)
+				//初始化后状态改为1
+				//接收数据时改为2
+				//值为3表示正在解析数据，把数据转换为本地能识别的类型
+				//响应内容解析完成， 可以在客户端调用后状态改为4
+//				console.log(xmlhttp.responseText)
+			}
+			$("#button1").click(function(e){
+				console.log($("#span1").text())
+				$("#span1").text(xmlhttp.responseText)
+			})
+			xmlhttp.open("GET","new_file.txt",true)
+			console.log("初始化建立连接： "+xmlhttp.readyState)
+			xmlhttp.send()
+			console.log("开始获取数据： "+xmlhttp.readyState)
+		</script>
+		<div id="div2">
+			<span id="span2">
+				没有发送请求之前
+			</span>
+			<button id="button2">改变</button>
+		</div>
+		<script type="text/javascript">
+			$("#button2").click(function(){
+				$("#span2").load("new_file.txt",function(inner,status,xhr){
+					console.log(inner)
+					console.log(status)
+					console.log(xhr)
+				})
+			})
+		</script>
+	
+		<div id="div3">
+			<span id="span3">
+				没有发送请求之前
+			</span>
+			<button id="button3" onclick="get()">改变</button>
+		</div>
+		<script type="text/javascript">
+			function get(){
+				$.get("http://localhost:3000?name=hyx",function(data,status,obj){
+					$("#span3").html(data)
+					console.log(status)
+				})
+			}
+		</script>
+		
+		<div id="div4">
+			<span id="span4">
+				没有发送请求之前
+			</span>
+			<button id="button4" onclick="post()">改变</button>
+			<script type="text/javascript">
+			function post(){
+				$.get("http://localhost:3000",{name:"hyx"},function(data,status,obj){
+					$("#span4").html(data)
+					console.log(status)
+				})
+			}
+		</script>
+		</div>
+	</body>
+</html>

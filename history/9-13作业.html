@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--JS输出(控制台、页面、弹窗)
+		console.log是控制台输出，页面输出用document.write,弹窗用alert-->
+		<script type="text/javascript">
+			console.log("9-13")
+//			延迟函数 计时函数 取消
+			function timeClick1(){
+				var x = document.getElementById("txt1");
+				var t1=setTimeout(function(){
+					x.value="2秒"
+				},2000)
+//				clearTimeout(t2)
+				var t2=setTimeout(function(){
+					x.value="4秒"
+				},4000)
+				clearTimeout(t2)
+				var t3=setTimeout(function(){
+					x.value="6秒"
+				},6000)
+			}
+		</script>
+		<script src="js/9-13.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<!--JS代码引入的三种方式
+		1.从外部引入
+		2.写在内部head中
+		3.写在body的控件中-->
+		<div id="div1">
+			<script type="text/javascript">
+				document.writeln("div1")
+				console.log(welcome())
+			</script>
+		</div>
+		<!--JS数据类型(number、string、boolean、null、undefined、Array、Object)  
+		typeof方法的使用-->
+		<div id="div2">
+			<script type="text/javascript">
+				var a;
+				a=null;
+				console.log(typeof(a),a)
+				var notDefine
+				console.log(typeof(notDefine))
+				var num=100
+				console.log(typeof(num))
+				var bool=true
+				console.log(typeof(bool))
+//				Array声明两种方法
+				var array = [6,2,3,9]
+				console.log(typeof(array))
+				var array1=new Array
+				array1=[1,2]
+				console.log(typeof(array1))
+//				使用索引访问  for遍历   for in 遍历
+				for (var i=0;i<array.length;i++){
+					console.log(array[i])
+				}
+				for(var i in array)
+	   			{
+	   				console.log(array[i]);
+	   			}
+//				length pop push shift unshift reverse sort splice indexof 
+//				pop是按照索引删除,push是在数组的最后加一个元素,shift是把第一个元素删掉,unshift是在开头加一个元素,reverse是反向,indexof是查看某个元素的位置(也可用来判断字符串是否包涵子字符串)
+//				sort是排序,默认升序,里面可以写匿名函数来规定排序方式;此处用倒序
+				newArray1=array.sort(function(a,b){
+					return a<b
+				})
+				console.log(newArray1)
+//				splice有三个参数,splice(a,b,c),a和b是必选项，c可有可无，a表示要编辑的起始位置，负数时表示倒数第几个；b代表删除几个，只能从前向后删，不能取负值，C代表添加的内容
+				newArray2=array.splice(1,1,"我是添加的")
+				//此时返回的是删除的内容
+				console.log(array)
+				console.log(newArray2)
+				var obj={"name":"张三"}
+				console.log(typeof(obj))
+//				类型转换三种必知：+将数字转字符串  parseInt parseFloat
+				str1="这是一句话，后面要加个数字："
+				console.log(typeof(str1+num))
+				var sNum="50"
+				console.log(typeof(sNum))
+				sNum1=parseInt(sNum)
+				console.log(typeof(sNum1))
+				sNum2=parseFloat(sNum)
+				console.log(typeof(sNum2))
+				//但是如果sNum是个小数的话，int会取整数部分，float会保存成浮点数
+			</script>
+		</div>
+		<!--算数运算符+ - * / % ^ ++ --
+		加减乘除,取余,异或，每次加一，每次减一
+		注意异或两个值相等时结果为0
+				
+		赋值运算符= += *= /= %=
+		赋值,加上等号后面的值之后再赋值,乘上等号后面的值之后再赋值,除以等号后面的值之后再赋值,对等号后面的值取余之后再赋值
+
+		比较运算符  > <= >= <= == ===
+		大于,小于,等于,大于等于,小于等于,等于(会自动转变类型比较),全等于(全等于要求类型也相同)
+
+		逻辑运算符	&& || ！
+		与或非
+		
+		流程控制
+		if	else if		else   switch
+		while	do while
+		for		for in
+		break continue 和JAVA完全一样-->
+		<div id="div3">
+			div3
+			<script type="text/javascript">
+//				Object声明两种方法
+				var person={
+					name:"张三",
+					age:18
+				}
+				console.log(person)
+				
+				var person1 =new Object()
+				person1.name="张三"
+				person1.age=19
+				console.log(person1)
+//				属性赋值，属性获取
+				person1.name="习习蛤蛤"
+				console.log(person1.name)
+//				序列化 反序列化
+//				序列化 :把对象序列化成字符串
+				var jStr=JSON.stringify(person);
+				console.log(jStr,typeof(jStr))
+//				反序列化:把序列化的字符串反序列化为对象
+				var person2= JSON.parse(jStr);
+				console.log(person2,typeof(person2))
+			</script>
+		</div>
+		
+		<div id="div4">
+			<form>
+				<input type="button" name="timeButton1" id="timeButton1" value="显示时间" onclick="timeClick1()" />
+				<input type="text" id="txt1" />
+			</form>
+			<!--匿名函数与闭包的写法-->
+			<!--匿名函数和闭包-->
+			<script type="text/javascript">
+				function func1(){
+					var a=10;
+					a++;
+					function func2(){
+						console.log("func2")
+					}
+					return func2()
+				}
+				console.log(func1())
+			</script>
+		</div>
+	</body>
+</html>

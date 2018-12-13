@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!--六个等级的标题-->
+		<h1 id="start">H1</h1>
+		<h2>H2</h2>
+		<h3>H3</h3>
+		<h4>H4</h4>
+		<h5>H5</h5>
+		<h6>H6</h6>
+		<!--字体强调等-->
+		<b>加粗</b>
+		<i>斜体</i>
+		<strong>强调（粗体强调）</strong>
+		<em>强调（斜体强调）</em>
+		<!--下划线和删除线-->
+		<u>下划线</u>
+		<del>删除线</del>
+		<!--字的大/小-->
+		<small>小号字体</small>
+		<big>大号字体</big>
+		<!--上标下标-->
+		<sup>上标</sup>
+		<sub>下标</sub>
+		<br />
+		<br />
+		<br />
+		<br />
+		<!--列表设置-->
+		<ul>
+			<li>无序列表1</li>
+			<li>无序列表2</li>
+		</ul>
+		<ol>
+			<li>有序列表1</li>
+			<li>有序列表2</li>
+		</ol>
+		<!--无序套有序-->
+		<ul>
+			<li>
+				<ol>
+					<li>abc</li>
+					<li>def</li>
+				</ol>
+			</li>
+			<li>
+				<ol>
+					<li>abc</li>
+					<li>def</li>
+				</ol>
+			</li>
+		</ul>
+		<!--自定义列表-->
+		<!--项目及注释的组合-->
+		<dl>
+			<dt>项目1</dt>
+			<dd>注释👆</dd>
+			<dt>项目2</dt>
+			<dd>注释👆</dd>
+		</dl>
+		<!--段落，自带行距-->
+		<p>这是一个段落</p>
+		<p>这也是一个段落</p>
+		<p>这还是一个段落</p>
+		<!--行内编辑-->
+		这是一句话， <span style="color: blue;">这是</span>两句话
+		<!--换行-->
+		<br />
+		<br />
+		<br />
+		<!--水平线-->
+		<hr />
+		
+		<br />
+		<br />
+		<!--超链接-->
+		<a href="汇总作业.txt",target="_blank">target决定打开方式，href为路径</a>
+		<a href="#start">锚点跳转H1等级标题</a>
+		<!--图片-->
+		<img src="know/img/HBuilder.png" usemap="#hotPoint"/>
+		<!--usemap中的#可以控制是否显示选取框-->
+		<p>width和height分别控制图片的宽和高</p>
+		<map name="hotPoint">
+			<area shape="circle" coords="50,50,50" href="" alt="" />
+			<!--area中路径的#可以控制是否持续显示选取框-->
+		</map>
+		<!--视频-->
+		<video src="2018.8.13_xmind操作.mp4" autoplay muted controls width="480" height="270"></video>
+		<!--加了muted才能自动播放 不知道原因-->
+		<audio src="game_music.mp3" controls></audio>
+		
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<!--表格-->
+		<table border="2" cellspacing="" cellpadding="">
+			<!--border是外部边框的粗细，后面两个分别是格子中的空间和格子间的距离-->
+			<tr>
+			<th bgcolor="aqua">Header1</th>
+			<th>Header2</th>
+			<th>Header3</th>
+			<th>Header4</th>
+		</tr>
+		<tr>
+			<td colspan="2">Data</td> 
+			<!--合并列-->
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td rowspan="2">Data</td>
+			<!--合并列-->
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		</table>
+	</body>
+</html>

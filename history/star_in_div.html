@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+	<head>
+		<title>test</title>
+		
+	</head>
+	<body style="background-color: black;">
+	    <div id="div1">
+	    	<script type="text/javascript">
+	    	document.onclick=function(e){
+//	    		e.clientX,e.clientY 来获取坐标
+				var star=document.createElement("img")
+				star.setAttribute("src","image/xingxing.gif")
+				//控制要产生图片的大小
+				randomXy=Math.random()*200+20
+				star.setAttribute("width",randomXy)
+				star.setAttribute("height",randomXy)
+	    		console.log(star.getAttribute("width"))
+	    		//控制要产生图片的位置,用此时鼠标的坐标减去图片宽度高度的一半
+	    		var xPic=e.clientX-randomXy/2 
+	    		var yPic=e.clientY-randomXy/2 
+	    		console.log(xPic)
+	    		star.style.position="absolute"
+	    		star.style.left=xPic+"px"
+	    		console.log(star.left)
+	    		star.style.top=yPic+"px"
+	    		
+//	    		document.body.appendChild(star)
+	    		var div=document.getElementById("div1")
+	    		div.appendChild(star)
+	    	}
+	    </script>
+	    </div>
+	</body>
+</html>

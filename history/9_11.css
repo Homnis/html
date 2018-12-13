@@ -1,0 +1,15 @@
+*{
+	color: red;
+}
+textarea{
+	background-color: azure;
+}
+#where{
+	color: cadetblue;
+}
+.button1{
+	color: darkgreen;
+}
+.button2{
+	background-color: darkgray;
+}

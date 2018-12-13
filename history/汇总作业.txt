@@ -1,0 +1,35 @@
+*	jQuery如何使用
+*	jQuery选择器
+	基本选择器
+	范围选择器
+	属性选择器
+	伪类选择器
+*	jQuery筛选
+		// jQuery 筛选
+		// 1,顺序:.eq(n)   .first()  last()
+		// 2,find()  children()
+		// 3,parent() parents() parentsUntil()
+		// 4,next() nextAll()  nextUntil()
+		// 5.prev() prevAll() prevUntil()
+		// 6.filter() not()
+*	文档操作
+		// text() html() val() attr()
+		// addClass()	removeClass()  toggleClass()  removeAttr()
+		// append appendTo
+		// prepend prependTo
+		// after insertAfter
+		// before insertBefore
+		// replaceWith replaceAll
+		// empty 
+		// remove
+*	事件
+		// bind  unbind
+		// on off
+		// one
+		// stopPropagation()
+		// preventDefault()
+		// e.target代表点击对象
+		// e.currentTarget代表监听对象
+*	停靠案例
+	
+	

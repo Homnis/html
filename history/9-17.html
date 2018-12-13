@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<!--<script src="jQuery version/jquery-2.1.4.js" type="text/javascript">
+//			console.log("引用本地jQuery")
+		</script>-->
+		<div id="div1">
+			<table border="" cellspacing="" cellpadding="">
+				<tr>
+					<th>Header</th>
+					<th>Header</th>
+					<th>Header</th>
+				</tr>
+				<tr>
+					<td>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+				</tr>
+				<tr>
+					<td>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+				</tr>
+			</table>
+			<p id="p1">1</p>
+			<p id="p2">2</p>
+		</div>
+		<!--<script type="text/javascript">
+			window.jQuery||document.write('<script src="jQuery version/jquery-2.1.4.js"><\/script>')
+			console.log("123")
+		</script>-->
+		<script type="text/javascript">
+			$(function(){
+				console.log(" 标签加载完毕");
+			})
+			$("#div1").each(function(){this.style.color="red"})
+		</script>
+		<script type="text/javascript">
+			$("p").attr("style",function(i,r){
+				console.log(i,r)
+				return "color:blue";
+			})
+		</script>
+	</body>
+</html>

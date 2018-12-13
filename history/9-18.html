@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jQuery version/jquery-2.1.4.js" type="text/javascript"></script>
+		<style type="text/css">
+			#backToTop{
+				display: none;
+				position: fixed;
+				left: 1700px;
+				top: 800px;
+			}
+		</style>
+	</head>
+	<body style="overflow: scroll;height: 2000px;">
+		<script type="text/javascript">
+		 //禁止滚动条
+//		 $(document.body).css({
+//		   "overflow-x":"hidden",
+//		   "overflow-y":"hidden"
+//		 });
+		 
+		 //启用滚动条
+		 $(document.body).css({
+		   "overflow-x":"auto",
+		   "overflow-y":"auto"
+		   ""
+		 });
+		  
+		</script> 
+		<!--全选-->
+		<div id="div1">
+			<form action="star_in_div.html" method="post">
+				<div id="div1-1">
+					<input type="checkbox" name="all" id="all" /> <span id="span1">全选</span>
+					
+					<ul>
+						<li><input type="checkbox" name="check" id="check_first" value="first" />first</li>
+						<li><input type="checkbox" name="check" id="check_second" value="second" />second</li>
+					</ul>
+					<input type="submit"/>
+				</div>
+			</form>
+			<script type="text/javascript">
+				$(function(){
+					var all=$("#all")
+					var inputs=$("ul li input")
+					$(all).click(function(e){
+						console.log(all.text())
+						if ($("#span1").text()=="全选") {
+							$("#span1").text("全不选")
+							$("ul li input").prop("checked",true)
+						} 
+						else{
+							$("#span1").text("全选")
+							$("ul li input").prop("checked",false)
+						}
+					})
+					
+				})
+			</script>
+		</div>
+		
+		<div id="div2">
+			<br />
+			<br />
+			<img src="know/img/HBuilder.png" id="img1" width="100px" height="100px"/>
+			<br />
+			<button id="show">显示</button>
+			<button id="hide">隐藏</button>
+			
+		</div>
+		<script type="text/javascript">
+				image1=$("#img1")
+				console.log(image1.css("display"))
+				$("#hide").click(function(e){
+					if(image1.css("display")!="none"){
+						image1.hide(2000)
+					}
+				})
+				$("#show").click(function(){
+					if(image1.css("display")=="none"){
+						image1.show(2000)
+					}
+				})
+			</script>
+		<div id="div3">
+			<div id="div3-1">
+				<style type="text/css">
+					#div3 div{
+						margin: 10px auto;
+						height: 200px;
+						width: 200px;
+						background-color: #007FFF;
+					}
+				</style>
+			</div>
+			<div id="div3-2">
+				<span >
+					div3-2
+				</span>
+			</div>
+			<img src="image/xingxing.gif" id="backToTop" width="100px" height="100px"/>
+			<script type="text/javascript">
+				backToTop=$("#backToTop")
+				$(function(){
+					$(window).scroll(function(e){
+						if($(window).scrollTop()>100){
+							backToTop.fadeIn(1000)
+						}
+					})
+					$(window).scroll(function(e){
+						if($(window).scrollTop()<100){
+							backToTop.fadeOut(1000)
+						}
+					})
+					backToTop.click(function(){
+						$(window).scrollTop(0)
+					})
+				})
+			</script>
+		</div>
+	</body>
+</html>

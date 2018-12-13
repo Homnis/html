@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jQuery version/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="div1">
+			<input type="text" name="research" id="research"  />
+			<ul id="msg">
+				<li>default</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var research=$("#research")
+			research.keyup(function(){
+//				console.log("1")
+				$.ajax({
+					url:"https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?cb=?",
+					type:"get",
+					data:{wd:research.val()},
+					dataType:"jsonp",
+					success:function(e){
+						$("#msg").empty();
+//						console.log(e)
+						var msgs=e.s
+//						console.log(msgs)
+						for(var i in msgs){
+//							console.log(i)
+							var str="<li>"+ msgs[i] +"</li>";
+							$("#msg").append(str)
+						}
+					}
+				})
+			})
+		</script>
+	</body>
+</html>
